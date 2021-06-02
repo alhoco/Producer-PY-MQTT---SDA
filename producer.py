@@ -1,3 +1,8 @@
+# Receptor module: 
+# Irene Abad Londoño & Alejandro Hoyos Correa
+# Credits: Victor Hugo Camargo
+
+
 from json import dumps
 from serial import Serial
 
@@ -97,7 +102,7 @@ while True:
                 output[hex(payload[i * 3])] =  (payload[(i * 3) + 1] << 8) | (payload[(i * 3) + 2])
             print(output)
             mqtt_client.publish(
-                topic="sda/sensor",
+                topic="sda/sensorIA",
                 payload=dumps(output)
-            )
+            )  
     sleep(0.01)
